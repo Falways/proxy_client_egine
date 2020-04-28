@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script type="application/javascript">
+        /*fetch("https://www.baidu.com",{
+            method:"GET",
+            headers:{
+                'Access-Control-Allow-Origin':'*',
+                "Content-Type":'text/plain'
+            },
+            'mode': 'no-cors'
+        }).then((res)=>{
+            let s = document.getElementById("show")
+            s.innerText = JSON.stringify(res.text())
+            console.log(res.text())
+        }).catch(err=>{
+            console.log(err.message)
+        })*/
+
+        function main(global) {
+            if ('onclick' in global) {
+                console.log("onclick")
+            } else if ('onfetch' in global) {
+                console.log("onfetch")
+            } else {
+                console.log("none")
+            }
+        }
+
+        main(self)
+    </script>
+</body>
+</html>
